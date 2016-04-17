@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AngularJS Lesson</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <div id='boring' class='exDiv'>
+        I'm just a boring old regular div. I've got some styling, but I don't actually react to anything (no, CSS' ":hover" doesn't count)!
+    </div>
+    <div id='complex' class='exDiv'>
+        I'm an interactive div (yay!) but I've got some pretty complex back-end code!
+        <table class='table table-striped'>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        Item you wanna add:
+            <input type 'text' id='itemAddBox'>
+        <button id='comAdd' class='btn btn-success'>Add Item</button>
+    </div>
+    <div ng-app='angApp'>
+        <div id='anglr' class='exDiv' ng-controller='MainController'>
+            And I'm an AngularJS-enabled div! Look at how much stuff I can do! And so little code!
+            <table class='table table-striped'>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Item</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat='fewd in coll'>
+                        <td>{{$index}}</td>
+                        <td>{{fewd.name}}</td>
+                        <td>
+                            <button class='btn btn-danger' ng-click='removeThing(fewd)'>X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            Item you wanna add:
+            <input type 'text' ng-model='itemToAdd'>
+            <button class='btn btn-success' ng-click='addThing()'>Add Item</button>
+        </div>
+        <div id='weathDiv' class='exDiv' ng-controller='wthController'>
+            Weather Data!
+            <hr/> City (in City,ST format):
+            <input type='text' ng-model='whereCty' ng-change='timerFunc()'/>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th title='Because math!'>Difference</th>
+                        <th>Conditions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat='day in weatherData.data.query.results.channel.item.forecast' ng-style='getStyle(day)'>
+                        <td>{{day.date}}</td>
+                        <td>{{day.high}}F</td>
+                        <td>{{day.low}}F</td>
+                        <td>{{day.high-day.low}}F</td>
+                        <td>{{day.text}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Bootstrap and jQuery, because why not -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Let's get some angular! -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <!-- Now let's do some JS! -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

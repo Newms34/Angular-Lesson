@@ -1,0 +1,26 @@
+/*The style below, for html and body, is not strictly necessary.However, if you plan on doing any fancy CSS, it's generally a good idea to explicitly define the document and body as 100% of the screen*/
+html,body{
+	width:100%;
+	height:100%;
+	margin:1%;
+}
+.exDiv{
+	box-shadow:2px 2px 4px #444;
+	width:800px;
+	padding:7px;
+	transition-duration: .5s;
+	font-size:12pt;
+	margin-bottom:10px;
+}
+.exDiv:hover{
+	font-size:13pt;
+}
+#boring{
+	background:#fcc;
+}
+#complex{
+	background:#ffc;
+}
+#anglr{
+	background:#cfc;
+}
