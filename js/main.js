@@ -56,7 +56,8 @@ app.controller("MainController", function($scope, $q) {
 });
 
 app.controller("wthController", function($scope, $q,$http) {
-    $scope.weatherData='crispy';
+    $scope.weatherData='ERROR';
+    $scope.whereIsIt='Type a city below!'
     $scope.t;
     $scope.getWeather = function(){
     	var uriFront = 'https://query.yahooapis.com/v1/public/yql?q=';
@@ -65,6 +66,7 @@ app.controller("wthController", function($scope, $q,$http) {
     	var fullUri = uriFront+encodeURIComponent(query)+uriBack;
     	$http.get(fullUri).then(function(wRes){
     		console.log(wRes)
+    		$scope.whereIsIt = wRes.data.query.results.channel.description
     		$scope.weatherData = wRes;
     	})
     }
