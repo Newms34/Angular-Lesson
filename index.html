@@ -12,7 +12,7 @@
         I'm just a boring old regular div. I've got some styling, but I don't actually react to anything (no, CSS' ":hover" doesn't count)!
     </div>
     <div id='complex' class='exDiv'>
-        I'm an interactive div (yay!) but I've got some pretty complex back-end code!
+        I'm an interactive div (yay!) but I've got some pretty complex back-end code! (32 lines)
         <table class='table table-striped'>
             <thead>
                 <tr>
@@ -29,7 +29,7 @@
     </div>
     <div ng-app='angApp'>
         <div id='anglr' class='exDiv' ng-controller='MainController'>
-            And I'm an AngularJS-enabled div! Look at how much stuff I can do! And so little code!
+            And I'm an AngularJS-enabled div! Look at how much stuff I can do! And so little code! (20 lines)
             <table class='table table-striped'>
                 <thead>
                     <tr>
@@ -49,8 +49,8 @@
                 </tbody>
             </table>
             Item you wanna add:
-            <input type 'text' ng-model='itemToAdd'>
-            <button class='btn btn-success' ng-click='addThing()'>Add Item</button>
+            <input type 'text' ng-model='itemToAdd' id='angTxt'>
+            <button class='btn btn-success' ng-click='addThing()' id='angBut'>Add Item</button>
         </div>
         <div id='weathDiv' class='exDiv' ng-controller='wthController'>
             Weather Data!

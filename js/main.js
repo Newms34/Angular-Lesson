@@ -18,6 +18,7 @@ var writeTable = function() {
     for (var i = 0; i < comCollection.length; i++) {
         comTbl.innerHTML += '<tr><td>' + i + '</td><td>' + comCollection[i].name + '</td><td> <button class="btn btn-danger" onclick=\'remItem("' + comCollection[i].id + '")\'>X</button></td></tr>';
         // Just look at how complex the quotes are! Escape sequences!
+        comRem.value='';
     }
 }
 var remItem = function(itemId) {
@@ -25,15 +26,13 @@ var remItem = function(itemId) {
     for (var j = 0; j < comCollection.length; j++) {
         if (comCollection[j].id == itemId) {
             comCollection.splice(j, 1);
-            break;
         }
     }
     writeTable();
 }
 
 // Awesome AngularJS stuff
-var app = angular.module("angApp", []);
-app.controller("MainController", function($scope, $q) {
+var app = angular.module("angApp", []).controller("MainController", function($scope, $q) {
     //More about these includes later!
     //below: the glorious $scope object (yes, it's an object!)
     $scope.coll = [];
@@ -49,10 +48,10 @@ app.controller("MainController", function($scope, $q) {
         for (var k = 0; k < $scope.coll.length; k++) {
             if ($scope.coll[k].id == itm.id) {
                 $scope.coll.splice(k, 1);
-                break;
             }
         }
     }
+    //note that we're 'missing' an ENTIRE function here (the 'writeTable' fn from above). This is because Angular does this automatically!
 });
 
 app.controller("wthController", function($scope, $q,$http) {
@@ -88,3 +87,15 @@ app.controller("wthController", function($scope, $q,$http) {
     }
 });
 
+//just some convenience functions
+$("#angTxt").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#angBut").click();
+    }
+});
+
+$("#itemAddBox").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#comAdd").click();
+    }
+});
