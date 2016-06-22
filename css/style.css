@@ -2,12 +2,13 @@
 html,body{
 	width:100%;
 	height:100%;
-	margin:1%;
+	margin:0%;
 }
 .exDiv{
 	box-shadow:2px 2px 4px #444;
 	width:800px;
 	padding:7px;
+	margin-left:1%;
 	transition-duration: .5s;
 	font-size:12pt;
 	margin-bottom:10px;
@@ -26,4 +27,64 @@ html,body{
 }
 #weathDiv{
 	background:linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7)),url('http://www.australia.com/content/australia/en/facts/weather/_jcr_content/mainParsys/hero/image.adapt.1663.medium.jpg') fixed;
+}
+/*if we were using SASS/SCSS, we could write these a lot more easily!*/
+nav{
+	background:#353599;
+	height:40px;
+	margin-bottom:10px;
+}
+nav ul{
+	list-style:none;
+	height:100%;
+}
+nav ul li{
+	display:inline-block;
+	height:100%;
+	width:11%;
+	text-align: center;
+	cursor:pointer;
+	transition-duration: .5s;
+}
+nav ul li a{
+	text-decoration: none;
+	color:#ccc;
+	height:100%;
+	width:100%;
+	display:block;
+}
+
+nav ul li a:hover{
+	text-decoration: none;
+	color:#fff;
+}
+nav ul li:hover, .navSel{
+	background:#4A4AD7;
+}
+ .anatoCodeDiv{
+	height:100%;
+}
+.fullBit{
+	width:100%;
+	height:100%;
+	display: block;
+}
+.pikBtn{
+	width:100%;
+	margin-bottom:10px;
+	transition-duration:.5s;
+}
+.pikdBut{
+	background:#1D3D59;
+	box-shadow:1px 1px 2px #000;
+}
+
+#attrib-directive{
+	padding:2px;
+	border:1px solid #009;
+}
+
+.directiveEx{
+	display:block;
+	transition-duration:.5s;
 }

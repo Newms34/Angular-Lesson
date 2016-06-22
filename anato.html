@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anatomy of an AngularJS Page</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body ng-app='anatoMod' ng-controller='anatoCont'>
+    <nav>
+        <ul>
+            <li><a href="index.html">What AngularJS Can Do</a></li>
+            <li><a href="template.html">AngularJS Template</a></li>
+            <li class='navSel'><a href="anato.html">Anatomy of an AngularJS Page</a></li>
+        </ul>
+    </nav>
+    <div class='col-md-5 anatoCodeDiv'>
+        <h4>Code: {{currItem|titleCase}}</h4>
+        <code class='fullBit' ng-non-bindable id='codeDiv'>Click a button to learn more!</code>
+    </div>
+    <div class='col-md-2'>
+        <h4>Pieces</h4>
+        <div class='btn btn-primary pikBtn' ng-repeat='ci in codeItems' ng-click='changeCode(ci)' ng-class='{"pikdBut":currItem==ci}'>{{ci}}</div>
+        <div class='btn btn-success' ng-click='greet()'>Service example</div>
+        <div class='btn btn-success pull-right' ng-click='lottery()'>Factory example</div>
+        <hr/>
+        <div ng-if='currItem=="directive"' my-directive id='attrib-directive' class='directiveEx'></div>
+        <my-directive ng-if='currItem=="directive"' class='directiveEx'></my-directive>
+    </div>
+    <div class='col-md-5 anatoCodeDiv'>
+        <h4>Explanation: {{currItem|titleCase}}</h4>
+        <div class='fullBit' id='explDiv'></div>
+    </div>
+    <!-- Bootstrap and jQuery, because why not! You don't actually NEED these (angular actually has something called jqlite, which is like jquery but with 50% less fat!). -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="./js/anato/anato.js"></script>
+    <script src="./js/anato/exampleFact.js"></script>
+    <script src="./js/anato/exampleService.js"></script>
+</body>
+
+</html>

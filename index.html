@@ -2,12 +2,19 @@
 <html>
 
 <head>
-    <title>AngularJS Lesson</title>
+    <title>AngularJS Lesson: What Angular Can Do</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
+    <nav>
+    	<ul>
+    		<li class='navSel'><a href="index.html">What AngularJS Can Do</a></li>
+    		<li><a href="template.html">AngularJS Template</a></li>
+    		<li><a href="anato.html">Anatomy of an AngularJS Page</a></li>
+    	</ul>
+    </nav>
     <div id='boring' class='exDiv'>
         I'm just a boring old regular div. I've got some styling, but I don't actually react to anything (no, CSS' ":hover" doesn't count)!
     </div>
@@ -24,7 +31,7 @@
             <tbody></tbody>
         </table>
         Item you wanna add:
-            <input type 'text' id='itemAddBox'>
+        <input type 'text' id='itemAddBox'>
         <button id='comAdd' class='btn btn-success'>Add Item</button>
     </div>
     <div ng-app='angApp'>
@@ -55,12 +62,12 @@
         <div id='weathDiv' class='exDiv' ng-controller='wthController'>
             Weather Data!
             <hr/> City (in City,ST format):
-            <input type='text' ng-model='whereCty' ng-change='timerFunc()'/>
+            <input type='text' ng-model='whereCty' ng-change='timerFunc()' />
             <table class='table'>
                 <thead>
-                <tr>
-                	<th colspan='5'>{{whereIsIt}}</th>
-                </tr>
+                    <tr>
+                        <th colspan='5'>{{whereIsIt}}</th>
+                    </tr>
                     <tr>
                         <th>Date</th>
                         <th>High</th>
