@@ -8,25 +8,47 @@
 </head>
 
 <body ng-app='logApp' ng-controller='logCont'>
+    <nav>
+        <ul>
+            <li><a href="index.html">What AngularJS Can Do</a></li>
+            <li><a href="template.html">AngularJS Template</a></li>
+            <li><a href="anato.html">Anatomy of an AngularJS Page</a></li>
+            <li class='navSel'><a href="login.html">Login Page Demo</a></li>
+        </ul>
+    </nav>
+    <div class='alert-danger'><h3>NOTE:</h3> for this demo, I'm using very <i>bad</i> encryption techniques. Furthermore, the 'database' of users isn't actually stored anywhere, so when you refresh the page, you'll need to re-register.</div>
+    <hr/>
     <div class='col-md-5'>
         <div class='panel panel-primary'>
             <div class='panel-heading'>Register</div>
             <div class='panel-body'>
                 <div class='form-group'>
                     <div class='col-md-4'>Name</div>
-                    <div class='col-md-8'><input type='text' ng-model='regname'></div>
+                    <div class='col-md-8'>
+                        <input type='text' ng-model='regname'>
+                    </div>
                 </div>
-                <br/><hr/><br/>
+                <br/>
+                <hr/>
+                <br/>
                 <div class='form-group'>
                     <div class='col-md-4'>Password:</div>
-                    <div class='col-md-8'><input type='password' ng-model='regpwd'></div>
+                    <div class='col-md-8'>
+                        <input type='password' ng-model='regpwd'>
+                    </div>
                 </div>
-                <br/><hr/><br/>
+                <br/>
+                <hr/>
+                <br/>
                 <div class='form-group'>
                     <div class='col-md-4'>Repeat Password:</div>
-                    <div class='col-md-8'><input type='password' ng-model='regpwdTwo'></div>
+                    <div class='col-md-8'>
+                        <input type='password' ng-model='regpwdTwo'>
+                    </div>
                 </div>
-                <br/><hr/><br/>
+                <br/>
+                <hr/>
+                <br/>
                 <div class='form-group' style='text-align:center;'>
                     <button class='btn btn-primary' ng-click='register()'>Record me!</button>
                 </div>
@@ -39,14 +61,22 @@
             <div class='panel-body'>
                 <div class='form-group'>
                     <div class='col-md-4'>Name</div>
-                    <div class='col-md-8'><input type='text' ng-model='logname'></div>
+                    <div class='col-md-8'>
+                        <input type='text' ng-model='logname'>
+                    </div>
                 </div>
-                <br/><hr/><br/>
+                <br/>
+                <hr/>
+                <br/>
                 <div class='form-group'>
                     <div class='col-md-4'>Password:</div>
-                    <div class='col-md-8'><input type='password' ng-model='logpwd'></div>
+                    <div class='col-md-8'>
+                        <input type='password' ng-model='logpwd'>
+                    </div>
                 </div>
-                <br/><hr/><br/>
+                <br/>
+                <hr/>
+                <br/>
                 <div class='form-group' style='text-align:center;'>
                     <button class='btn btn-primary' ng-click='login()'>Login!</button>
                 </div>
